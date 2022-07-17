@@ -5,8 +5,8 @@ import os
 import requests
 
 DIDA365_COOKIE = os.environ["DIDA365_COOKIE"]
-CORPID = os.environ["corpid"]
-CORPSECRET = os.environ["corpsecret"]
+CORPID = os.environ["CORPID"]
+CORPSECRET = os.environ["CORPSECRET"]
 
 
 def get_dida365_data(cookie):
