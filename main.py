@@ -7,6 +7,7 @@ import requests
 DIDA365_COOKIE = os.environ["DIDA365_COOKIE"]
 CORPID = os.environ["CORPID"]
 CORPSECRET = os.environ["CORPSECRET"]
+AGENTID = os.environ["AGENTID"]
 
 
 def get_dida365_data(cookie):
@@ -83,6 +84,6 @@ if __name__ == '__main__':
     res = "最近七日工作：\n"
     res += get_dida365_data(cookie=DIDA365_COOKIE)
     send(corpid=CORPID,
-         agentid=1000002,
+         agentid=AGENTID,
          corpsecret=CORPSECRET,
          content=res)

@@ -8,9 +8,10 @@ on:
     types:
       - api
   push:
-    branches: [ "main" ]
+    branches: 
+      - main
   schedule:
-  # 定时任务，在每天的5点推送天气信息到邮箱
+  # 定时任务，在每天的0点执行
     - cron: '0 0 * * *'
   # Triggers the workflow on push or pull request events but only for the main branch
 
@@ -30,5 +31,6 @@ jobs:
         env:
           DIDA365_COOKIE: ${{ secrets.DIDA365_COOKIE }}
           CORPID: ${{ secrets.CORPID }}
+          AGENTID: ${{ secrets.AGENTID }}
           CORPSECRET: ${{ secrets.CORPSECRET }}
         run: python main.py
