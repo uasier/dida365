@@ -4,9 +4,11 @@ name: CI
 
 # Controls when the action will run. 
 on: 
+  push:
+    branches: [ "main" ]
   schedule:
   # 定时任务，在每天的5点推送天气信息到邮箱
-    - cron: '0 16 * * *'
+    - cron: '0 0 * * *'
   # Triggers the workflow on push or pull request events but only for the main branch
 
 jobs:
@@ -19,10 +21,11 @@ jobs:
         uses: actions/setup-python@v1
         with:
           python-version: 3.7
-      - name: 'Install requirements'
-        run: pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+      # - name: 'Install requirements'
+      #   run: pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
       - name: 'Working'
         env:
           DIDA365_COOKIE: ${{ secrets.DIDA365_COOKIE }}
-          NOTICE_SECRET: ${{ secrets.NOTICE_SECRET }}
+          CORPID: ${{ secrets.CORPID }}
+          CORPSECRET: ${{ secrets.CORPSECRET }}
         run: python main.py
