@@ -17,10 +17,10 @@ jobs:
     steps:
       - name: 'Checkout'
         uses: actions/checkout@v2
-      - name: 'Set up Python'
-        uses: actions/setup-python@v1
-        with:
-          python-version: 3.7
+      # - name: 'Set up Python'
+      #   uses: actions/setup-python@v1
+      #   with:
+      #     python-version: 3.7
       # - name: 'Install requirements'
       #   run: pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
       - name: 'Working'
