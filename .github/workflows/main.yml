@@ -3,7 +3,8 @@
 name: CI
 
 # Controls when the action will run. 
-on: 
+on:
+  repository_dispatch
   push:
     branches: [ "main" ]
   schedule:
