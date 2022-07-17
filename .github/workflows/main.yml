@@ -4,7 +4,9 @@ name: CI
 
 # Controls when the action will run. 
 on:
-  repository_dispatch
+  repository_dispatch:
+    types:
+      - api
   push:
     branches: [ "main" ]
   schedule:
